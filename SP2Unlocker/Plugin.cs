@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.UI;
+﻿using Assets.Scripts.Flight.Demo;
+using Assets.Scripts.UI;
 using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
@@ -9,12 +10,12 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 
+
 namespace SP2Unlocker
 {
     [BepInPlugin(PluginInfo.GUID, PluginInfo.Name, PluginInfo.Version)]
     public class Plugin : BaseUnityPlugin
     {
-
         void Awake()
         {
             GameObject gobject = new GameObject("SP2UnlockerGUI");
@@ -25,8 +26,6 @@ namespace SP2Unlocker
         void Start()
         {
             Logger.LogInfo("SP2Unlocker 1.0.0 by miniusbhater");
-
-
         }
         //User Interface/Main Menu UI/Empty (Clone)/Empty (Clone)/File (Clone)/Empty (Clone)/Empty (Clone)/Playtest Panel
 
@@ -34,8 +33,22 @@ namespace SP2Unlocker
         {
             GameObject playtestPanel = GameObject.Find("PlaytestPanel");
             GameObject.Destroy(playtestPanel);
-            //GameObject demoSpace = GameObject.Find("DemoSpace");
-            //GameObject.Destroy(demoSpace);
+            GameObject demoSpace = GameObject.Find("DemoSpace");
+            GameObject.Destroy(demoSpace);
+            GameObject sam = GameObject.Find("Sam(Clone)");
+            GameObject.Destroy(sam);
+            GameObject data = GameObject.Find("DemoData");
+            GameObject.Destroy(data);
+            GameObject wall1 = GameObject.Find("DemoWall");
+            GameObject.Destroy(wall1);
+            GameObject wall2 = GameObject.Find("demowall");
+            GameObject.Destroy(wall2);
+            GameObject stripes = GameObject.Find("Stripes");
+            GameObject.Destroy(stripes);
+
+
+            
+
 
         }
 
@@ -67,6 +80,8 @@ namespace SP2Unlocker
         }
     }
 }
+
+
 
     
 

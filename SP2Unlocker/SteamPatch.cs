@@ -5,7 +5,7 @@ using Steamworks;
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using UnityEngine;
 namespace SP2Unlocker
 {
     [BepInPlugin(PluginInfoSteamPatch.GUID, PluginInfoSteamPatch.Name, PluginInfoSteamPatch.Version)]
@@ -36,6 +36,21 @@ namespace SP2Unlocker
         static bool Prefix()
         {
             return false; 
+        }
+    }
+
+    [HarmonyPatch(typeof(Resources), "Load", new Type[] { typeof(string) })]
+    class Patch
+    {
+        static bool Prefix(ref string path, ref UnityEngine.Object __result)
+        {
+            if (path == "DemoData")
+            {
+                Debug.Log("Disabling");
+                __result = null; // cancel loading
+                return false;    // skip the original Resources.Load
+            }
+            return true; // allow other assets to load
         }
     }
 
