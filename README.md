@@ -12,5 +12,6 @@
 SP2Unlocker is intended so that you can bypass the time limit of the SimplePlanes 2 playtest.
 This mod is only so us players can enjoy SP2 until its official release.
 SP2Unlocker removes the time limit and steam requirement.
+Only use this mod if you own a SimplePlanes 2 license on steam.
 This mod does break the in-game close button.
 
