@@ -8,6 +8,6 @@ namespace SP2Unlocker
     {
         public const string GUID = "com.miniusbhater.SimplePlanes2.SP2UnlockerSteamPatch";
         public const string Name = "SP2UnlockerSteamPatch";
-        public const string Version = "1.0.0";
+        public const string Version = "1.2.0";
     }
 }
