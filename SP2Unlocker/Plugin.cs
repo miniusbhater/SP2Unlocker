@@ -6,6 +6,7 @@ using HarmonyLib;
 using Rewired;
 using Steamworks;
 using System;
+using System.IO;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
@@ -16,6 +17,7 @@ namespace SP2Unlocker
     [BepInPlugin(PluginInfo.GUID, PluginInfo.Name, PluginInfo.Version)]
     public class Plugin : BaseUnityPlugin
     {
+        static string extraInfo = "SP2Unlocker is intended so that you can bypass the time limit of the\nSimplePlanes 2 playtest. This mod is only so us players can enjoy\nSP2 until its official release.\nThis mod does break the in-game close button.\n\nSP2Unlocker made by miniusbhater :p";
         void Awake()
         {
             GameObject gobject = new GameObject("SP2UnlockerGUI");
@@ -26,6 +28,25 @@ namespace SP2Unlocker
         void Start()
         {
             Logger.LogInfo("SP2Unlocker 1.0.0 by miniusbhater");
+            string gameLocation = System.Environment.CurrentDirectory;
+            string txtLocation = $"{gameLocation}\\steam_appid.txt";
+            if (File.Exists(txtLocation))
+            {
+                Logger.LogInfo("AppID exists");
+            }
+            else
+            {
+                try
+                {
+                    File.WriteAllText(txtLocation, "480");          
+                    extraInfo = "This is your first time launching SP2 with SP2Unlocker installed\nPlease restart your game for multiplayer to work.";
+                }
+
+                catch
+                {
+                    Logger.LogError("Failed to create appid file");
+                }
+            }
         }
         //User Interface/Main Menu UI/Empty (Clone)/Empty (Clone)/File (Clone)/Empty (Clone)/Empty (Clone)/Playtest Panel
 
@@ -71,7 +92,7 @@ namespace SP2Unlocker
                 int y = (Screen.height / 2) - (boxHeight / 2);
                 GUI.Box(new Rect(x, y, boxWidth, boxHeight), "SP2Unlocker");
                 GUI.Label(new Rect(x + 20, y + 50, boxWidth - 40, boxHeight - 60), "Thanks for using SP2Unlocker <3", sp2style);
-                GUI.Label(new Rect(x + 20, y + 100, boxWidth - 40, boxHeight - 60), "SP2Unlocker is intended so that you can bypass the time limit of the\nSimplePlanes 2 playtest. This mod is only so us players can enjoy\nSP2 until its official release.\nSP2Unlocker removes the time limit and steam requirement.\nThis mod does break the in-game close button.\n\nSP2Unlocker made by miniusbhater :p", sp2style2);
+                GUI.Label(new Rect(x + 20, y + 100, boxWidth - 40, boxHeight - 60), $"{extraInfo}", sp2style2);
                 if (GUI.Button(new Rect(x + boxWidth - 65, y + 5, 60, 20), "Close"))
                 {
                     showWindow = false;

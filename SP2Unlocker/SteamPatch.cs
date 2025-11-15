@@ -21,7 +21,7 @@ namespace SP2Unlocker
     }
 
     [HarmonyPatch(typeof(SteamAPI), "RestartAppIfNecessary")]
-    class Patch_RestartAppIfNecessary
+    class PatchRestartAppIfNecessary
     {
         static bool Prefix(ref bool __result)
         {
@@ -31,12 +31,24 @@ namespace SP2Unlocker
     }
 
     [HarmonyPatch(typeof(UnityEngine.Application), "Quit", new System.Type[0])]
-    class Patch_ApplicationQuit
+   class PatchApplicationQuit
+   {
+       static bool Prefix()
+       {
+           return false;
+       }
+   }
+
+
+    [HarmonyPatch(typeof(SteamAPI), "init")]
+    class PatchSteamInit
     {
-        static bool Prefix()
+        static bool prefix(ref bool __result)
         {
-            return false; 
+            Steamworks.SteamAPI.RestartAppIfNecessary(new AppId_t(480));
+            __result = true;
+            return false;
         }
-    } 
+    }
 }
 
