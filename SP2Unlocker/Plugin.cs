@@ -10,6 +10,8 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
+using System.Collections;
+
 
 
 namespace SP2Unlocker
@@ -27,7 +29,7 @@ namespace SP2Unlocker
 
         void Start()
         {
-            Logger.LogInfo("SP2Unlocker 1.0.0 by miniusbhater");
+            Logger.LogInfo("SP2Unlocker 1.3.0 by miniusbhater");
             string gameLocation = System.Environment.CurrentDirectory;
             string txtLocation = $"{gameLocation}\\steam_appid.txt";
             if (File.Exists(txtLocation))
@@ -68,10 +70,14 @@ namespace SP2Unlocker
             GameObject.Destroy(stripes);
 
 
+
+
             
 
 
         }
+
+      
 
         public class GUIBehaviour : MonoBehaviour
         {

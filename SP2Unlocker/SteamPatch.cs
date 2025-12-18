@@ -1,4 +1,5 @@
-﻿using BepInEx;
+﻿using Assets.Scripts.Flight.Demo;
+using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
 using Steamworks;
@@ -31,13 +32,13 @@ namespace SP2Unlocker
     }
 
     [HarmonyPatch(typeof(UnityEngine.Application), "Quit", new System.Type[0])]
-   class PatchApplicationQuit
-   {
-       static bool Prefix()
-       {
-           return false;
-       }
-   }
+    class PatchApplicationQuit
+    {
+        static bool Prefix()
+        {
+            return false;
+        }
+    }
 
 
     [HarmonyPatch(typeof(SteamAPI), "init")]
@@ -50,5 +51,35 @@ namespace SP2Unlocker
             return false;
         }
     }
+
+    [HarmonyPatch(typeof(DemoRestrictedAirspace), "OnUpdateInvisibleWall")]
+    class PatchDemoRestrictions
+    {
+        static bool Prefix()
+        {           
+            return false;
+        }
+    }
+
+    [HarmonyPatch(typeof(DemoRestrictedAirspace), "FireMissiles")]
+    class PatchDemoRestrictions1
+    {
+        static bool Prefix()
+        {
+            return false;
+        }
+    }
+
+    [HarmonyPatch(typeof(DemoRestrictedAirspace), "OnEnterAirspace")]
+    class PatchDemoRestrictions2
+    {
+        static bool Prefix()
+        {
+            return false;
+        }
+    }
+
 }
+
+    
 
