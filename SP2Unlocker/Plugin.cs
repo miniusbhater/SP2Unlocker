@@ -49,32 +49,30 @@ namespace SP2Unlocker
                     Logger.LogError("Failed to create appid file");
                 }
             }
+         
+            StartCoroutine(WaitForPanel());
         }
+
+
+        IEnumerator WaitForPanel()
+        {
+            while (GameObject.Find("PlaytestPanel") == null)
+                yield return null; 
+
+            DestroyPanel();
+        }
+
+        void DestroyPanel()
+        {
+            GameObject playtestPanel = GameObject.Find("PlaytestPanel");
+            GameObject.Destroy(playtestPanel);
+        }
+
         //User Interface/Main Menu UI/Empty (Clone)/Empty (Clone)/File (Clone)/Empty (Clone)/Empty (Clone)/Playtest Panel
 
         void Update()
         {
-            GameObject playtestPanel = GameObject.Find("PlaytestPanel");
-            GameObject.Destroy(playtestPanel);
-            GameObject demoSpace = GameObject.Find("DemoSpace");
-            GameObject.Destroy(demoSpace);
-            GameObject sam = GameObject.Find("Sam(Clone)");
-            GameObject.Destroy(sam);
-            GameObject data = GameObject.Find("DemoData");
-            GameObject.Destroy(data);
-            GameObject wall1 = GameObject.Find("DemoWall");
-            GameObject.Destroy(wall1);
-            GameObject wall2 = GameObject.Find("demowall");
-            GameObject.Destroy(wall2);
-            GameObject stripes = GameObject.Find("Stripes");
-            GameObject.Destroy(stripes);
-
-
-
-
-            
-
-
+          
         }
 
       
