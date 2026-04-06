@@ -1,5 +1,5 @@
 # [BepInEx](https://github.com/BepInEx/BepInEx) mod for SimplePlanes 2
-![Downloads](https://img.shields.io/github/downloads/miniusbhater/GetThatOS/total?style=flat)
+![Downloads](https://img.shields.io/github/downloads/miniusbhater/SP2Unlocker/total?style=flat)
 
 
 <img width="2560" height="1440" alt="image" src="https://github.com/user-attachments/assets/ac757006-168b-4a72-88fe-103203cac13a" />
