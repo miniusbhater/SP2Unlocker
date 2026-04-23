@@ -3,9 +3,9 @@
 
 #
 # Important notice 24/04/2026
-As SimplePlanes 2 oficially released today this project is now dead.
-It will still work with the playtest and demo but will recieve no future updates.
-Thank you for using SP2Unlocker.
+### As SimplePlanes 2 oficially released today this project is now dead.
+### It will still work with the playtest and demo but will recieve no future updates.
+### Thank you for using SP2Unlocker.
 <img width="2559" height="1439" alt="image" src="https://github.com/user-attachments/assets/488de282-527d-4d0f-9171-9d52fc7da67e" />
 #
 
