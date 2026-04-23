@@ -6,7 +6,7 @@
 ### As SimplePlanes 2 oficially released today this project is now dead.
 ### It will still work with the playtest and demo but will recieve no future updates.
 ### Thank you for using SP2Unlocker.
-<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/488de282-527d-4d0f-9171-9d52fc7da67e" />
+<img width="2560" height="1440" alt="image" src="https://github.com/user-attachments/assets/488de282-527d-4d0f-9171-9d52fc7da67e" />
 
 #
 
