@@ -2,7 +2,7 @@
 ![Downloads](https://img.shields.io/github/downloads/miniusbhater/SP2Unlocker/total?style=flat)
 
 #
-# Important notice 24/04/2026
+# Important notice 23/04/2026
 ### As SimplePlanes 2 oficially released today this project is now dead.
 ### It will still work with the playtest and demo but will recieve no future updates.
 ### Thank you for using SP2Unlocker.
